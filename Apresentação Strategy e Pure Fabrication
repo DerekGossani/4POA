@@ -1,0 +1,26 @@
+# 🧩 Padrões de Projeto em Java — Strategy e Pure Fabrication
+
+Este projeto demonstra de forma simples e didática dois **padrões de projeto** muito usados na programação orientada a objetos:  
+👉 **Strategy**  
+👉 **Pure Fabrication**
+
+O código foi feito em **Java**, ideal para fins educacionais e apresentações de faculdade.
+
+---
+
+## 📚 1. Padrão Strategy
+
+O padrão **Strategy** tem como objetivo **definir uma família de algoritmos**, encapsulá-los e torná-los **intercambiáveis**.  
+Isso permite alterar o comportamento de um objeto **em tempo de execução**, sem precisar modificar seu código-fonte.
+
+### 💡 Exemplo neste projeto
+
+Usamos o `Strategy` para aplicar diferentes **tipos de desconto** em um produto:
+- `DescontoNatal` → 10% de desconto  
+- `DescontoAniversario` → 20% de desconto  
+
+A classe `CalculadoraDeDesconto` utiliza uma interface `DescontoStrategy` e pode trocar a estratégia de cálculo conforme a necessidade:
+
+```java
+calculadora.setEstrategia(new DescontoNatal());
+double valorComDesconto = calculadora.aplicarDesconto(200.0);
